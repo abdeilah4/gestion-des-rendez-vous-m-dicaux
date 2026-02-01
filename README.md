@@ -4,11 +4,11 @@
 
 ---
 
-## 📄 Description du Projet
+## Description du Projet
 
 Ce projet est une plateforme web moderne conçue pour simplifier la prise de rendez-vous médicaux et la gestion des patients. Développée dans le cadre d'un **Projet de Fin d'Études (PFE)**, elle offre une interface intuitive et des fonctionnalités complètes pour les patients, les médecins et l'administration.
 
-## 🚀 Fonctionnalités Clés
+## Fonctionnalités Clés
 
 ### 👨‍⚕️ Pour les Médecins
 - **Tableau de Bord Personnalisé** : Vue d'ensemble sur les activités quotidiennes.
@@ -16,18 +16,18 @@ Ce projet est une plateforme web moderne conçue pour simplifier la prise de ren
 - **Gestion des Rendez-vous** : Consultation, validation ou modification des rendez-vous patients.
 - **Inscription & Profil** : Système d'inscription dédié pour les nouveaux praticiens.
 
-### 👤 Pour les Patients
+### Pour les Patients
 - **Recherche de Médecins** : Liste complète des médecins disponibles dans le système.
 - **Prise de Rendez-vous** : Réservation facile de créneaux selon les disponibilités.
 - **Détails & Export PDF** : Consultation des détails du rendez-vous et génération de justificatifs en format PDF.
 - **Gestion du Profil** : Mise à jour des informations personnelles.
 
-### 🛡️ Pour l'Administration
+### Pour l'Administration
 - **Gestion des Comptes** : Contrôle des utilisateurs et des médecins.
 - **Validation des Médecins** : Approbation des nouvelles demandes d'inscription des praticiens.
 - **Supervision Globale** : Vue globale sur les statistiques et l'état du système.
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 - **Backend** : [Laravel 10.x](https://laravel.com) (Framework PHP)
 - **Frontend** : [Blade](https://laravel.com/docs/blade) (Moteur de template), [Tailwind CSS](https://tailwindcss.com) (Styling)
@@ -35,7 +35,7 @@ Ce projet est une plateforme web moderne conçue pour simplifier la prise de ren
 - **Outil de Build** : [Vite](https://vitejs.dev)
 - **Génération PDF** : DomPDF / Barryvdh-Laravel-DomPDF
 
-## ⚙️ Installation Globale
+## Installation Globale
 
 1. **Cloner le projet** :
    ```bash
@@ -74,6 +74,6 @@ Ce projet est une plateforme web moderne conçue pour simplifier la prise de ren
 
 ---
 
-## 🎓 Auteurs
+## Auteurs
 
-- **TAHIRI Abdelilah** - *EST Béni Mellal*
+- **TAHIRI Abdelilah** 
