@@ -52,7 +52,6 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contact.send'
 
 
 Route::post('/rendezvous/valider', [RendezVousController::class, 'valider'])->name('rendezvous.valider');
-Route::post('/rendezvous/valider', [RendezVousController::class, 'valider'])->name('rendezvous.valider');
 
 
 // ✅ Routes des disponibilités
@@ -64,9 +63,6 @@ Route::prefix('disponibilites')->group(function () {
     // ⚠ Correction : "patientId" remplacé par "userId"
     Route::get('/details/{disponibiliteId}/{userId}', [DisponibiliteController::class, 'showDetails'])->name('disponibilites.details');
     Route::get('/pdf/{disponibiliteId}/{userId}', [DisponibiliteController::class, 'generatePdf'])->name('disponibilites.pdf');
-});
-Route::prefix('disponibilite')->group(function () {
-    Route::get('/details/{disponibiliteId}/{userId}', [DisponibiliteController::class, 'showDetails'])->name('disponibilites.details');
 });
 
 // ✅ Route Dashboard principale
@@ -84,15 +80,11 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::middleware(['auth:medecin'])->get('/rendezvous/medecin', [RendezVousController::class, 'indexForMedecin'])->name('rendezvous.indexForMedecin');
 
-Route::get('/rendezvous/medecin', [RendezVousController::class, 'indexForMedecin'])->name('rendezvous.indexForMedecin');
 Route::get('/rendezvous', [RendezVousController::class, 'listeRendezVous'])->name('rendezvous.liste');
 
-
-Route::get('/rendezvous', [RendezVousController::class, 'index'])->name('rendezvous.index');
 Route::post('/rendezvous/{id}/update-status', [RendezVousController::class, 'updateStatus'])->name('rendezvous.updateStatus');
 Route::delete('/rendezvous/{id}', [RendezVousController::class, 'destroy'])->name('rendezvous.destroy');
 
-Route::delete('/rendezvous/{rendezvous}', [RendezVousController::class, 'destroy'])->name('rendezvous.destroy');
 Route::get('/alogin', [AdminAuthController::class, 'showLoginForm'])->name('alogin');
 Route::post('/alogin', [AdminAuthController::class, 'login'])->name('admin.doLogin');
     route::get('/demandes-medecins', [AdminMedecinController::class, 'demandes'])->name('admin.medecins.demandes');
