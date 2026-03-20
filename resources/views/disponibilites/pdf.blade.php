@@ -66,7 +66,7 @@
         </div>
 
         <div class="barcode">
-            {!! DNS1D::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'C128') !!}
+            {!! DNS2D::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'QRCODE') !!}
             <p class="barcode-id">ID : RDV-{{ $disponibilite->id }}-{{ $user->id }}</p>
         </div>
     </div>

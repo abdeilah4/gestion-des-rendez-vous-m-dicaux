@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const heureDebut = this.dataset.heureDebut;
 
             if (isAvailable && dispoId) {
-                window.location.href = `/disponibilite/details/${dispoId}/${patientId}?heure_debut=${heureDebut}`;
+                window.location.href = `/disponibilites/details/${dispoId}/${patientId}?heure_debut=${heureDebut}`;
             } else {
                 alert('Ce créneau n\'est pas disponible');
             }

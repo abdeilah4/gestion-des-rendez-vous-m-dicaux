@@ -46,12 +46,13 @@
     <!-- Feedback message after success -->
     @if(session('rendezvous_valide'))
         <div class="alert alert-success mt-3">
-            Rendez-vous validé avec succès!
+            <strong>Rendez-vous validé avec succès !</strong><br>
+            Vous pourrez télécharger les détails de votre rendez-vous au format PDF dès que le médecin l'aura confirmé.
         </div>
     @endif
     <div class="mt-4">
-    <h4>Code-Barres du Rendez-vous</h4>
-    {!! DNS1D::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'C128') !!}
+    <h4>Code QR du Rendez-vous</h4>
+    {!! \Milon\Barcode\Facades\DNS2DFacade::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'QRCODE') !!}
     <p class="text-muted">ID : RDV-{{ $disponibilite->id }}-{{ $user->id }}</p>
     </div>
 

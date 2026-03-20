@@ -12,7 +12,7 @@
         <div class="col-md-6">
             <h4>Nos coordonnées</h4>
             <p><strong>Email :</strong> support@medrendezvous.com</p>
-            <p><strong>Téléphone :</strong> +212 0666666666</p>
+            <p><strong>Téléphone :</strong> +212 666666666</p>
             <p><strong>Adresse :</strong> 123 Rue de la Santé, Beni Mellal , Maroc</p>
         </div>
         <div class="col-md-6">

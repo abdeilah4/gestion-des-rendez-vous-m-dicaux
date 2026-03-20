@@ -7,7 +7,7 @@ use App\Models\Medecin;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
-use Milon\Barcode\Facades\DNS1DFacade as DNS1D;
+use Milon\Barcode\Facades\DNS2DFacade as DNS2D;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
@@ -31,7 +31,7 @@ class DisponibiliteController extends Controller
         $heureFin = Carbon::parse($heureDebut)->addHour()->format('H:i:s');
         $age = $user->date_naissance ? Carbon::parse($user->date_naissance)->age : 'N/A';
 
-        $codeBarre = DNS1D::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'C128');
+        $codeBarre = DNS2D::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'QRCODE');
 
         return view('disponibilites.details', compact(
             'disponibilite',
@@ -69,7 +69,7 @@ class DisponibiliteController extends Controller
         $medecin = Medecin::findOrFail($disponibilite->medecin_id);
         $age = $user->date_naissance ? Carbon::parse($user->date_naissance)->age : 'N/A';
         $heureFormatted = Carbon::parse($disponibilite->heure)->format('H:i');
-        $codeBarre = DNS1D::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'C128');
+        $codeBarre = DNS2D::getBarcodeHTML("RDV-{$disponibilite->id}-{$user->id}", 'QRCODE');
 
         $contenu = "
             <html>
@@ -88,7 +88,7 @@ class DisponibiliteController extends Controller
                     <p>Jour: {$disponibilite->jour}</p>
                     <p>Heure: {$heureFormatted}</p>
 
-                    <h3>🔢 Code-Barres</h3>
+                    <h3>🔢 Code QR</h3>
                     <div>{$codeBarre}</div>
                     <p>ID: RDV-{$disponibilite->id}-{$user->id}</p>
                 </body>
@@ -121,7 +121,7 @@ class DisponibiliteController extends Controller
         $contenu .= "Jour: {$disponibilite->jour}\n";
         $contenu .= "Heure: {$heureFormatted}\n\n";
 
-        $contenu .= "🔢 Code-Barres ID: RDV-{$disponibilite->id}-{$user->id}\n";
+        $contenu .= "🔢 Code QR ID: RDV-{$disponibilite->id}-{$user->id}\n";
 
         return response($contenu)
             ->header('Content-Type', 'text/plain')

@@ -21,7 +21,7 @@ class ContactController extends Controller
 
         // Envoi de l'email
         Mail::raw($request->message, function ($mail) use ($request) {
-            $mail->to('support@medrendezvous.com') // Remplacez par votre email
+            $mail->to('abdelilah.tahiri.per@gmail.com') 
                  ->subject('Nouveau message de contact')
                  ->replyTo($request->email);
         });
